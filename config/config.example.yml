@@ -1,0 +1,43 @@
+# set slack api token here or at command line when staring the bot
+# SLACK_API_TOKEN: <SLACK-API-TOKEN>
+
+DATA_PARAMS_PICKLE: /Users/sgraham/repos/emojibot/models/data_params.pkl
+EMOJI_MODEL_PATH: /Users/sgraham/repos/emojibot/models/emoji.model
+EMOJI_MAPPING:
+    empty: pensive
+    sadness: cry
+    enthusiasm: stuck_out_tongue_winking_eye
+    neutral: neutral_face
+    worry: worried
+    surprise: astonished
+    love: heart_eyes
+    fun: stuck_out_tongue
+    hate: rage
+    happiness: smiley
+    boredom: unamused
+    relief: relieved
+    anger: angry
+
+LOG_CONFIG:
+  disable_existing_loggers: False
+  version: 1
+  formatters:
+    base:
+      format: "[%(asctime)s %(levelname)s %(filename)s:%(lineno)s %(funcName)s()] %(message)s"
+  handlers:
+    file:
+      formatter: base
+      # keep daily records of logs for last 5 days
+      class: logging.handlers.TimedRotatingFileHandler
+      filename: /tmp/emojibot.log
+      # filename: /var/log/emojibot.log
+      when: midnight
+      backupCount: 5
+    stream:
+      formatter: base
+      class: logging.StreamHandler
+  root:
+#    handlers: [file]
+    handlers: [stream]
+#    level: INFO
+    level: DEBUG

@@ -1,0 +1,26 @@
+# Jupyter notebook
+.ipynb_checkpoints
+
+# Tensorflow files
+*.data-*
+*.index
+*.meta
+checkpoint
+
+# Data files
+*.csv
+*.pkl
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Pytest files
+.cache
+
+# OS filesls
+
+.DS_Store
+.DS_Store?
+Thumbds.db
