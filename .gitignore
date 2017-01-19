@@ -6,6 +6,7 @@
 *.index
 *.meta
 checkpoint
+tflearn_logs
 
 # Data files
 *.csv
