@@ -90,8 +90,8 @@ class Bot(object):
 @click.command(context_settings=dict(help_option_names=['-?', '-h', '--help']))
 @click.argument('config_file', type=click.File('rb'))
 @click.option('--slack_api_token', type=str)
-@click.option('--bot_name', type=str, default='emojibot')
-@click.option('--read_delay', type=int, default=1)
+@click.option('--bot_name', type=str)
+@click.option('--read_delay', type=int)
 def start_bot(config_file, slack_api_token, bot_name, read_delay):
     """Start Bot
 
@@ -106,6 +106,8 @@ def start_bot(config_file, slack_api_token, bot_name, read_delay):
     config = yaml.load(config_file)
 
     slack_api_token = slack_api_token or config['SLACK_API_TOKEN']
+    bot_name = bot_name or config.get('BOT_NAME', 'emojibot')
+    read_delay = read_delay or config.get('SLACK_READ_DELAY', 1)
 
     Bot(api_token=slack_api_token, bot_name=bot_name, config=config, read_delay=read_delay).start()
 

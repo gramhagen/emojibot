@@ -1,5 +1,7 @@
 # set slack api token here or at command line when staring the bot
 # SLACK_API_TOKEN: <SLACK-API-TOKEN>
+# BOT_NAME: <OVERRIDE-DEFAULT-HERE>
+# SLACK_READ_DELAY: <OVERRIDE-DEFAULT-HERE>
 
 DATA_PARAMS_PICKLE: /Users/sgraham/repos/emojibot/models/data_params.pkl
 EMOJI_MODEL_PATH: /Users/sgraham/repos/emojibot/models/emoji.model
