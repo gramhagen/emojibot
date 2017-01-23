@@ -35,8 +35,8 @@ class Emojify(object):
 
         # match network to models/lstm.ipynb (with 0 dropout)
         net = tflearn.input_data([None, self.max_sequence_length])
-        net = tflearn.embedding(net, input_dim=num_words, output_dim=256)
-        net = tflearn.lstm(net, 256, dropout=0.)
+        net = tflearn.embedding(net, input_dim=num_words, output_dim=128)
+        net = tflearn.lstm(net, 128, dropout=0.)
         net = tflearn.fully_connected(net, num_classes, activation='softmax')
         net = tflearn.regression(net, optimizer='adam', learning_rate=0.001, loss='categorical_crossentropy')
         self.model = tflearn.DNN(net, tensorboard_verbose=0)
