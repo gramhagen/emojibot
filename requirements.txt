@@ -1,6 +1,6 @@
 click==6.7
 pandas==0.19.2
-PyYAML==3.12
+pyyaml>=4.2b1
 pylint==1.6.4
 pytest==3.0.5
 slackclient==1.0.4
